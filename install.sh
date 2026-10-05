@@ -104,7 +104,7 @@ if [[ ! -f "$AUTOSTART_FILE" ]]; then
 [Desktop Entry]
 Name=Nextcloud
 GenericName=File Synchronizer
-Exec=/usr/bin/nextcloud --background
+Exec=env QT_QPA_PLATFORM=xcb /usr/bin/nextcloud --background
 Terminal=false
 Icon=Nextcloud
 Categories=Network
@@ -116,7 +116,7 @@ DESKTOPEOF
   success "Autostart entry created."
 else
   if ! grep -q "\-\-background" "$AUTOSTART_FILE"; then
-    sed -i 's|^Exec=.*nextcloud.*|Exec=/usr/bin/nextcloud --background|' "$AUTOSTART_FILE"
+    sed -i 's|^Exec=.*nextcloud.*|Exec=env QT_QPA_PLATFORM=xcb /usr/bin/nextcloud --background|' "$AUTOSTART_FILE"
     success "Autostart entry updated (added --background)."
   else
     info "Autostart entry already present and correct."
