@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "maximilian-maag.nextcloud",
+  "name": "Nextcloud",
+  "version": "1.0.0",
+  "author": "Maximilian Maag",
+  "license": "MIT",
+  "description": "Nextcloud sync status in the Omarchy bar. Shows sync state, opens the client on click, and suppresses the duplicate system-tray SNI entry.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Nextcloud",
+    "description": "Nextcloud sync status with click-to-open panel.",
+    "category": "Files",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
